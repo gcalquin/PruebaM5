@@ -3,7 +3,8 @@ class TweetsController < ApplicationController
 
   # GET /tweets or /tweets.json
   def index
-    @tweets = Tweet.all
+    #@tweets = Tweet.all
+    @tweets = Tweet.order("description").page(params[:page]).per(2)
   end
 
   # GET /tweets/1 or /tweets/1.json
