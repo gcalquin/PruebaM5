@@ -5,6 +5,10 @@ class TweetsController < ApplicationController
   def index
     #@tweets = Tweet.all
     @tweets = Tweet.order("description").page(params[:page]).per(2)
+
+    if params[:query_text].present?
+      @tweets = @tweet.search_full_text(params[:query_text])
+    end
   end
 
   # GET /tweets/1 or /tweets/1.json

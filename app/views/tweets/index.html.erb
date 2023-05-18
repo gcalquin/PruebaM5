@@ -1,12 +1,20 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Tweets</h1>
-
-<%= paginate @tweets%>
 <br>
+
+<%= text_field_tag :query_text, placeholder: t('.query_text'), onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
+
+
+<br>
+<%= paginate @tweets%>
+<br> <br>
 
 <div id="tweets">
   <% @tweets.each do |tweet| %>
+
+
+
     <%= render tweet %>
     <p>
       <%= link_to "Show this tweet", tweet %>

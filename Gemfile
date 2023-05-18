@@ -31,6 +31,9 @@ gem "jbuilder"
 #Gema para paginacion
 gem "kaminari"
 
+#Gema para busqueda
+gem "pg_search", "~> 2.3"
+
 # Use Redis adapter to run Action Cable in production
 # gem "redis", "~> 4.0"
 
@@ -74,3 +77,5 @@ group :test do
   gem "selenium-webdriver"
   gem "webdrivers"
 end
+
+

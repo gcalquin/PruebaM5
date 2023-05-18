@@ -31,3 +31,11 @@
 
 en:
   hello: "Hello world"
+
+tweet:
+  index:
+    query_text: 'Ingrese su busqueda aquí'
+
+tweets:
+  index:
+    query_text: 'Ingrese su busqueda aquí'
