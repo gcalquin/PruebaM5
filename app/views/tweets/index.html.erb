@@ -3,10 +3,15 @@
 <h1>Tweets</h1>
 <br>
 
-<%= text_field_tag :query_text, placeholder: t('.query_text'), onChange: 'this.form.requestSubmit()', value: params[:query_text] %>
+<%=form_with url: tweets_path, method: :get do |form|   %>
+
+<%= form.text_field :query_text, placeholder: t('query_text'), value: params[:query_text] %>
+
+<%end%>
 
 
-<br>
+
+<br><br>
 <%= paginate @tweets%>
 <br> <br>
 

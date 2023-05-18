@@ -6,8 +6,14 @@ class TweetsController < ApplicationController
     #@tweets = Tweet.all
     @tweets = Tweet.order("description").page(params[:page]).per(2)
 
+@q = params[:query_text]
+print "***************"
+print @q.to_s
+print "***************"
+
     if params[:query_text].present?
-      @tweets = @tweet.search_full_text(params[:query_text])
+      @tweets = @tweets.search_full_text(params[:query_text])
+      print @tweets.to_s
     end
   end
 
