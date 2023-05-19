@@ -1,12 +1,27 @@
 <div id="<%= dom_id tweet %>">
-  <p>
+
+<!--
+<p>
+<strong>Username:</strong>
+<%= tweet.username %>
+</p>
+
+<p>
     <strong>Description:</strong>
     <%= tweet.description %>
   </p>
+-->
 
-  <p>
-    <strong>Username:</strong>
-    <%= tweet.username %>
-  </p>
+<div class="card">
+<br>
+  <div class="card-header"  style="font-size:12px";>Usuario: 
+  <%= tweet.username %>
+  </div>
+  <div class="card-body">
+    <p class="card-text"><%= tweet.description %></p>
+
+  </div>
+</div>
+
 
 </div>

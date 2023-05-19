@@ -1,19 +1,25 @@
 <p style="color: green"><%= notice %></p>
 
 <h1>Tweets</h1>
-<br>
+<hr>
 
 <%=form_with url: tweets_path, method: :get do |form|   %>
-
-<%= form.text_field :query_text, placeholder: t('query_text'), value: params[:query_text] %>
-
+  <p style="text-align:right;">
+Buscar un Tweet o Usuario   <%= form.text_field :query_text, value: params[:query_text] %>
+</p>
 <%end%>
+<hr>
 
 
 
 <br><br>
-<%= paginate @tweets%>
+
+
+<p style="text-align:right;">
+<%= link_to "Nuevo Tweet", new_tweet_path, :class => "btn btn-primary"%>
+</p>
 <br> <br>
+
 
 <div id="tweets">
   <% @tweets.each do |tweet| %>
@@ -21,10 +27,14 @@
 
 
     <%= render tweet %>
-    <p>
-      <%= link_to "Show this tweet", tweet %>
+    <p style="text-align:right;">
+    <br>
+      <%= link_to "Mostrar", tweet, :class => "btn btn-outline-primary" %>
+    <br> 
+    <hr> 
     </p>
   <% end %>
 </div>
 
-<%= link_to "New tweet", new_tweet_path %>
+<br>
+<%= paginate @tweets%>
